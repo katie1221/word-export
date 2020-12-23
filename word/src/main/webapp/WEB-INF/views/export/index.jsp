@@ -27,6 +27,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <div title="方式一" style="padding:10px">
 	        <div class="m2">方式一：使用<span class="s1">POI-tl</span>根据word模板动态生成word</div>
 			<a href="#" class="easyui-linkbutton" onclick="doExportWord1();" data-options="iconCls:'icon-save'">导出word方式一</a>
+        
+            <div class="m2" style="margin-top: 30px;">使用<span class="s1">POI-tl</span>根据word模板动态生成word（包含动态表格）</div>
+			<a href="#" class="easyui-linkbutton" onclick="doExportWord3();" data-options="iconCls:'icon-save'">导出word（包含动态表格）</a>
+			
         </div>
          <div title="方式二" style="padding:10px">
 	        <div class="m2">方式二：使用<span class="s1">easypoi</span>根据word模板动态生成word</div>
@@ -38,9 +42,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	  function doExportWord1(){
 	    window.location.href="<%=basePath%>/auth/exportWord/exportUserWord";
 	  }
-	  //方式er导出word
+	  //方式二导出word
 	  function doExportWord2(){
 	    window.location.href="<%=basePath%>/auth/exportWord/exportUserWord2";
+	  }
+	  //方式一导出word（包含动态表格）
+	  function doExportWord3(){
+	    window.location.href="<%=basePath%>/auth/exportWord/exportDataWord3";
 	  }
 	</script>
 </body>
