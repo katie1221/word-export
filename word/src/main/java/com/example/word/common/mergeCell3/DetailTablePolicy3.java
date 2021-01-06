@@ -1,4 +1,4 @@
-package com.example.word.common.mergeCell2;
+package com.example.word.common.mergeCell3;
 
 import java.util.List;
 import java.util.Map;
@@ -11,19 +11,19 @@ import com.deepoove.poi.policy.MiniTableRenderPolicy;
 import com.deepoove.poi.util.TableTools;
 
 /**
- * 表格动态行插入、渲染、合并单元格处理
+ * 商品订单详情 表格动态行插入、渲染、合并单元格处理
  * @author Administrator
  *
  */
-public class DetailTablePolicy2 extends DynamicTableRenderPolicy {
+public class DetailTablePolicy3 extends DynamicTableRenderPolicy {
 
-	// 填充数据所在行数
+	// 商品订单详情填充数据所在行数
 	int listsStartRow = 1;
 
 	@Override
 	public void render(XWPFTable table, Object data) {
 		if (null == data) return;
-		DetailData2 detailData = (DetailData2) data;
+		DetailData3 detailData = (DetailData3) data;
 
 		// 商品订单详情列表数据 循环渲染
 		List<RowRenderData> lists = detailData.getPlists();

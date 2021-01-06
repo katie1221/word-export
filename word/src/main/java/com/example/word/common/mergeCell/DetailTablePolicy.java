@@ -11,6 +11,11 @@ import com.deepoove.poi.policy.DynamicTableRenderPolicy;
 import com.deepoove.poi.policy.MiniTableRenderPolicy;
 import com.deepoove.poi.util.TableTools;
 
+/**
+ * 表格动态行插入、渲染、合并单元格处理
+ * @author Administrator
+ *
+ */
 public class DetailTablePolicy extends DynamicTableRenderPolicy {
 
 	  // 货品填充数据所在行数
@@ -30,6 +35,7 @@ public class DetailTablePolicy extends DynamicTableRenderPolicy {
 	      // 循环插入行
 	      for (int i = 0; i < labors.size(); i++) {
 	        XWPFTableRow insertNewTableRow = table.insertNewTableRow(laborsStartRow);
+	       // 循环插入列，共7列
 	        for (int j = 0; j < 7; j++) insertNewTableRow.createCell();
 
 	        // 合并单元格
