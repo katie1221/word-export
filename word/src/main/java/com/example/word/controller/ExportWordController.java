@@ -530,7 +530,7 @@ public class ExportWordController {
 		    		typeName="二级分类3";
 		    	}
 		    	String index = String.valueOf(i+1);
-		    	RowRenderData plist = RowRenderData.build(index, typeName, "商品"+i, "套", "2","100","技术参数"+i);
+		    	RowRenderData plist = RowRenderData.build(index, typeName, "商品"+i, "套", "2","1000.00","技术参数"+i);
 		    	plist.setRowStyle(rowStyle);
 				plists.add(plist);
 				

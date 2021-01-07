@@ -35,6 +35,7 @@ public class DetailTablePolicy2 extends DynamicTableRenderPolicy {
 			// 循环插入行
 			for (int i = lists.size()-1; i >=0; i--) {
 				XWPFTableRow insertNewTableRow = table.insertNewTableRow(listsStartRow);
+				insertNewTableRow.setHeight(620);//设置行高
 				// 循环插入列，共7列
 				for (int j = 0; j < 7; j++)
 					insertNewTableRow.createCell();
@@ -51,15 +52,20 @@ public class DetailTablePolicy2 extends DynamicTableRenderPolicy {
 					if(type_name.equals(typeName)){
 				        // 合并第1列的第i+1行到第i+listSize行的单元格
 				        TableTools.mergeCellsVertically(table, 1, i+1, i+listSize);
-				        //处理垂直居中
-				        for (int y = 1; y < 7; y++){
-					        XWPFTableCell cell = table.getRow(i+1).getCell(y);
-					        cell.setVerticalAlignment(XWPFTableCell.XWPFVertAlign.CENTER); //垂直居中
-					    }
+//				        //处理垂直居中(默认行高时)
+//				        for (int y = 0; y < 7; y++){
+//					        XWPFTableCell cell = table.getRow(i+1).getCell(y);
+//					        cell.setVerticalAlignment(XWPFTableCell.XWPFVertAlign.CENTER); //垂直居中
+//					    }
 				        tlists.remove(j);
 				        break;
 					}
 				}
+				 //处理垂直居中(自定义行高时，设置垂直居中)
+		        for (int y = 0; y < 7; y++){
+			        XWPFTableCell cell = table.getRow(i+1).getCell(y);
+			        cell.setVerticalAlignment(XWPFTableCell.XWPFVertAlign.CENTER); //垂直居中
+			    }
 				System.out.println(v);
 			}
 		}
